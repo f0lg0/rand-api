@@ -18,6 +18,7 @@
     },
     "homepage": "https://github.com/f0lg0/rand-api#readme",
     "dependencies": {
+        "@types/uuid": "^8.3.0",
         "apollo-server-express": "^2.18.1",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",

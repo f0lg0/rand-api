@@ -8,8 +8,18 @@ import { RequestHandler } from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 
+// Miscellaneous
 import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver";
 import { AmongUsCharacterResolver } from "./graphql/resolvers/AmongUsCharacters";
+
+// ASCII ART
+import { DumbFace1, Anime1 } from "./graphql/resolvers/AsciiArtResolvers";
+
+// Random Generated Data
+import {
+    RandomNumber01,
+    RandomID,
+} from "./graphql/resolvers/RandomGeneratedData";
 
 (async () => {
     const app = express();
@@ -28,7 +38,14 @@ import { AmongUsCharacterResolver } from "./graphql/resolvers/AmongUsCharacters"
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloWorldResolver, AmongUsCharacterResolver],
+            resolvers: [
+                HelloWorldResolver,
+                AmongUsCharacterResolver,
+                DumbFace1,
+                Anime1,
+                RandomNumber01,
+                RandomID,
+            ],
             validate: false,
         }),
         context: ({ req, res }) => ({ req, res }),
