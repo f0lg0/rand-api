@@ -13,7 +13,11 @@ import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver";
 import { AmongUsCharacterResolver } from "./graphql/resolvers/AmongUsCharacters";
 
 // ASCII ART
-import { DumbFace1, Anime1 } from "./graphql/resolvers/AsciiArtResolvers";
+import {
+    DumbFace1,
+    Anime1,
+    Weird1,
+} from "./graphql/resolvers/AsciiArtResolvers";
 
 // Random Generated Data
 import {
@@ -45,6 +49,7 @@ import {
                 Anime1,
                 RandomNumber01,
                 RandomID,
+                Weird1,
             ],
             validate: false,
         }),
