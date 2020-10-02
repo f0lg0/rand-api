@@ -10,4 +10,10 @@ export class AmongUsCharacter {
 
     @Field(() => String)
     height!: string;
+
+    @Field(() => String)
+    color!: string;
+
+    @Field(() => String)
+    bloodType!: string;
 }
