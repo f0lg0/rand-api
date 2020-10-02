@@ -21,11 +21,7 @@ import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver.js";
             message: "Please visit GraphQL endpoint",
             path: `http://${HOST}:${PORT}/graphql`,
             actions: {
-                queries: [
-                    { hello: "string" },
-                    { Users: ["username", "email", "id"] },
-                ],
-                mutations: [{ signupUser: ["username", "email"] }],
+                queries: [{ hello: "string" }],
             },
         });
     };
