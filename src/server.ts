@@ -8,7 +8,8 @@ import { RequestHandler } from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 
-import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver.js";
+import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver";
+import { AmongUsCharacterResolver } from "./graphql/resolvers/AmongUsCharacters";
 
 (async () => {
     const app = express();
@@ -20,9 +21,6 @@ import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver.js";
         res.json({
             message: "Please visit GraphQL endpoint",
             path: `http://${HOST}:${PORT}/graphql`,
-            actions: {
-                queries: [{ hello: "string" }],
-            },
         });
     };
 
@@ -30,7 +28,8 @@ import { HelloWorldResolver } from "./graphql/resolvers/HelloWorldResolver.js";
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloWorldResolver],
+            resolvers: [HelloWorldResolver, AmongUsCharacterResolver],
+            validate: false,
         }),
         context: ({ req, res }) => ({ req, res }),
     });
