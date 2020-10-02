@@ -1,0 +1,33 @@
+{
+    "name": "rand-api",
+    "version": "1.0.0",
+    "description": "A completely useless API that serves completely random data.",
+    "main": "./src/server.ts",
+    "scripts": {
+        "start": "node ./dist/server.js",
+        "dev": "nodemon ./dist/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/f0lg0/rand-api.git"
+    },
+    "author": "Leonardo Folgoni",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/f0lg0/rand-api/issues"
+    },
+    "homepage": "https://github.com/f0lg0/rand-api#readme",
+    "dependencies": {
+        "apollo-server-express": "^2.18.1",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "morgan": "^1.10.0",
+        "reflect-metadata": "^0.1.13",
+        "type-graphql": "^1.0.0",
+        "typescript": "^4.0.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}
