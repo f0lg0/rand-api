@@ -74,7 +74,7 @@ import { isMy } from "./graphql/resolvers/QuestionsAnswers";
 
     app.use(notFoundHandler);
 
-    app.listen(process.env.PORT, () => {
+    app.listen(PORT, HOST, () => {
         console.log(
             `🚀 Server ready at http://${HOST}:${PORT}${apolloServer.graphqlPath}`
         );
