@@ -27,7 +27,7 @@ import {
 } from "./graphql/resolvers/RandomGeneratedData";
 
 // Q&A
-import { isMy } from "./graphql/resolvers/QuestionsAnswers";
+import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
 
 (async () => {
     const app = express();
@@ -54,7 +54,8 @@ import { isMy } from "./graphql/resolvers/QuestionsAnswers";
                 RandomNumber01,
                 RandomID,
                 Weird1,
-                isMy,
+                IsMy,
+                WhatIs,
                 RandomString,
             ],
             validate: false,
