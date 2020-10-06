@@ -5,7 +5,11 @@
     "main": "./src/server.ts",
     "scripts": {
         "start": "node ./dist/server.js",
+        "postinstall": "tsc",
         "dev": "nodemon ./dist/server.js"
+    },
+    "engines": {
+        "node": "14.13.0"
     },
     "repository": {
         "type": "git",
