@@ -4,9 +4,10 @@
     "description": "A completely useless API that serves completely random data.",
     "main": "./src/server.ts",
     "scripts": {
-        "start": "node ./dist/server.js",
+        "start": "node dist/server.js",
         "postinstall": "tsc",
-        "dev": "nodemon ./dist/server.js"
+        "dev": "nodemon dist/server.js",
+        "deploy": "git add . && git commit -m Heroku && git push heroku master"
     },
     "engines": {
         "node": "14.13.0"
