@@ -7,7 +7,7 @@
         "start": "node dist/server.js",
         "postinstall": "tsc",
         "dev": "nodemon dist/server.js",
-        "deploy": "git add . && git commit -m 'Heroku' && git push heroku master"
+        "deploy": "git add . && git commit -m 'Heroku' && git push heroku main"
     },
     "engines": {
         "node": "14.13.0"
