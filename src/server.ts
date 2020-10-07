@@ -37,8 +37,7 @@ import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
 
     const home: RequestHandler = (_, res) => {
         res.json({
-            message: "Please visit GraphQL endpoint",
-            path: `http://${HOST}:${PORT}/graphql`,
+            message: "Please visit the GraphQL endpoint",
         });
     };
 
