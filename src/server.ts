@@ -2,6 +2,9 @@ import "reflect-metadata";
 import dotenv from "dotenv";
 dotenv.config();
 
+import path from "path";
+const __dirname = path.resolve();
+
 import express from "express";
 import { RequestHandler } from "express";
 
@@ -31,17 +34,10 @@ import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
 
 (async () => {
     const app = express();
+    app.use("/public", express.static(path.join(__dirname, "public")));
 
     const HOST: string = process.env.HOST!;
     const PORT: string = process.env.PORT!;
-
-    const home: RequestHandler = (_, res) => {
-        res.json({
-            message: "Please visit the GraphQL endpoint",
-        });
-    };
-
-    app.get("/", home);
 
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
