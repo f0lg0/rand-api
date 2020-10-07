@@ -62,7 +62,7 @@ import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
         context: ({ req, res }) => ({ req, res }),
     });
 
-    apolloServer.applyMiddleware({ app, cors: false });
+    apolloServer.applyMiddleware({ app, cors: true });
 
     const notFoundHandler: RequestHandler = (_, res) => {
         res.status(404);
