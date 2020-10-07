@@ -32,8 +32,8 @@ import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
 (async () => {
     const app = express();
 
-    const HOST: string = process.env.HOST || "localhost";
-    const PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 5000;
+    const HOST: string = process.env.HOST!;
+    const PORT: string = process.env.PORT!;
 
     const home: RequestHandler = (_, res) => {
         res.json({
@@ -75,7 +75,7 @@ import { IsMy, WhatIs } from "./graphql/resolvers/QuestionsAnswers";
 
     app.use(notFoundHandler);
 
-    app.listen(PORT, HOST, () => {
+    app.listen(PORT, () => {
         console.log(
             `🚀 Server ready at http://${HOST}:${PORT}${apolloServer.graphqlPath}`
         );
