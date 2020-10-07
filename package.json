@@ -5,7 +5,7 @@
     "main": "./src/server.ts",
     "scripts": {
         "start": "node dist/server.js",
-        "postinstall": "tsc && mv -i -v public dist/ && rm -v -rf src",
+        "postinstall": "tsc",
         "dev": "nodemon dist/server.js",
         "deploy": "git add . && git commit -m 'Heroku' && git push heroku main"
     },
